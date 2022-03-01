@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #171717;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+header {
+  margin-bottom: 25px;
+}
+.posts {
+  color: #ffd700;
+}
+.list-group-item {
+  background-color: #a30b2e;
+}
+.home,
+.about,
+.contact,
+.projects {
+  color: #a30b2e;
+}
+.navbar-dark .navbar-brand {
+  color: #ffd700;
+}
+.navbar-dark .navbar-nav .active > .nav-link {
+  color: #ffd700;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: #ffd700;
+}
+.navbar-dark .navbar-brand:hover {
+  color: #a30b2e;
+}
+.navbar-dark .navbar-nav .active > .nav-link:hover {
+  color: #a30b2e;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #a30b2e;
+}
+.btn {
+  color: #ffd700;
+}
+.btn:hover {
+  color: #a30b2e;
+}
+.image-div {
+  border: 2px #ffd700 inset;
+}
+.image {
+  height: 70%;
+  width: 100%;
+}
