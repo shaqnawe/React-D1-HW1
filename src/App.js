@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { useAuth } from './contexts/AuthProvider';
 import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
 import Home from './views/Home';
@@ -8,8 +9,12 @@ import Contact from './views/Contact';
 import Trash from './views/Trash';
 
 const App = () => {
-  // let name = "Shakti Shah";
-  // let occupation = "Web Developer";
+  // Using React Hook createContext
+  // const { signIn } = createContext(AuthContext);
+  
+  // Using out custom React Hook
+  const { signIn, currentUser, logOut } = useAuth();
+
   return (
     <Fragment>
       <header>
@@ -49,24 +54,36 @@ const App = () => {
                 </Link>
               </li>
             </ul>
-            <form className="form-inline my-2 my-lg-0">
-              <input
-                className="form-control mr-sm-2"
-                type="text"
-                placeholder="Search"
-              />
-              <button
-                className="btn btn-outline-muted my-2 my-sm-0"
-                type="submit"
-              >
-                Search
-              </button>
-            </form>
+            <ul className="ul-inline my-2 my-lg-0">
+              {/* {condition} ? condition to run if true : condition to run if false */}
+              {!currentUser.loggedIn ? (
+                <li className="nav-item auth">
+                  <Link
+                    id="auth"
+                    onClick={() => signIn()}
+                    className="nav-link"
+                    to="."
+                  >
+                    Google Login
+                  </Link>
+                </li>
+              ) : (
+                <li className="nav-item auth">
+                  <Link
+                    id="auth"
+                    onClick={() => logOut()}
+                    className="nav-link"
+                    to="."
+                  >
+                    Logout
+                  </Link>
+                </li>
+              )}
+            </ul>
           </div>
         </nav>
       </header>
-      <main className="container">
-      </main>
+      <main className="container"></main>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/sent" element={<Sent />} />

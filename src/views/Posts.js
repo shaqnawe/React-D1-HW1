@@ -1,16 +1,10 @@
-import React, { Fragment, useState, useEffect } from "react";
-import axios from 'axios';
+import React, { Fragment } from "react";
 import "../index.css";
+import { useData } from '../contexts/DataProvider';
 
 const Posts = () => {
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    axios
-      .get(
-        `https://fakebook-january-derek.herokuapp.com/api/v1/blog`
-      )
-      .then((res) => setPosts(res.data));
-  }, []);
+  const { posts } = useData();
+  
   return (
     <Fragment>
       <div className="container posts">

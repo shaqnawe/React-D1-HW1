@@ -36,7 +36,7 @@ const Contact = () => {
               Check me out
             </label>
           </div>
-          <button type="submit" className="btn btn-danger">
+          <button type="submit" className="btn btn-muted">
             Submit
           </button>
         </form>
