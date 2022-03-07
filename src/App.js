@@ -1,19 +1,22 @@
 import React, { Fragment } from "react";
-import { useAuth } from './contexts/AuthProvider';
+import { useAuth } from "./contexts/AuthProvider";
 import { Route, Routes, Link } from "react-router-dom";
 import "./App.css";
-import Home from './views/Home';
-import Posts from './views/Posts';
-import Sent from './views/Sent';
-import Contact from './views/Contact';
-import Trash from './views/Trash';
+import Home from "./views/Home";
+import Posts from "./views/Posts";
+import Sent from "./views/Sent";
+import Contact from "./views/Contact";
+import Trash from "./views/Trash";
+import Login from "./views/Login";
 
 const App = () => {
   // Using React Hook createContext
   // const { signIn } = createContext(AuthContext);
-  
-  // Using out custom React Hook
+
+  // Using our custom React Hook
   const { signIn, currentUser, logOut } = useAuth();
+  // const authCtx = useContext(AuthContext);
+  // const userLoggedIn = authCtx.isLoggedIn;
 
   return (
     <Fragment>
@@ -54,20 +57,31 @@ const App = () => {
                 </Link>
               </li>
             </ul>
-            <ul className="ul-inline my-2 my-lg-0">
-              {/* {condition} ? condition to run if true : condition to run if false */}
-              {!currentUser.loggedIn ? (
+            {/* {condition} ? condition to run if true : condition to run if false */}
+            {!currentUser.loggedIn ? (
+              <ul className="ul-inline my-2 my-lg-0">
                 <li className="nav-item auth">
                   <Link
                     id="auth"
                     onClick={() => signIn()}
-                    className="nav-link"
+                    className="nav-link auth"
                     to="."
                   >
                     Google Login
                   </Link>
                 </li>
-              ) : (
+                <li className="nav-item auth">
+                  <Link
+                    id="auth"
+                    className="nav-link"
+                    to="/login"
+                  >
+                    Login
+                  </Link>
+                </li>
+              </ul>
+            ) : (
+              <ul>
                 <li className="nav-item auth">
                   <Link
                     id="auth"
@@ -78,8 +92,8 @@ const App = () => {
                     Logout
                   </Link>
                 </li>
-              )}
-            </ul>
+              </ul>
+            )}
           </div>
         </nav>
       </header>
@@ -90,6 +104,7 @@ const App = () => {
         <Route exact path="/posts" element={<Posts />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/trash" element={<Trash />} />
+        <Route exact path="/login" element={<Login />} />
       </Routes>
       <footer></footer>
     </Fragment>

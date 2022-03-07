@@ -4,10 +4,11 @@ import "../index.css";
 const Contact = () => {
   return (
     <Fragment>
+      <h1 id="contact" className="text-center mb-4">Contact Me</h1>
       <div className="contact">
         <form className="container form">
           <div className="form-group">
-            <label for="exampleInputEmail1">Email address</label>
+            <label htmlFor="exampleInputEmail1">Email address</label>
             <input
               type="email"
               className="form-control"
@@ -19,7 +20,7 @@ const Contact = () => {
             </small>
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
+            <label htmlFor="exampleInputPassword1">Password</label>
             <input
               type="password"
               className="form-control"
@@ -32,7 +33,7 @@ const Contact = () => {
               className="form-check-input"
               id="exampleCheck1"
             />
-            <label className="form-check-label" for="exampleCheck1">
+            <label className="form-check-label" htmlFor="exampleCheck1">
               Check me out
             </label>
           </div>

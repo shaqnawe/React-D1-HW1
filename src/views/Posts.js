@@ -7,9 +7,10 @@ const Posts = () => {
   
   return (
     <Fragment>
+      <h1 className="container text-center" id="posts">Posts</h1>
       <div className="container posts">
         {posts.map((p) => (
-          <li key={p.id} className="list-group-item">
+          <li key={p.id} className="list-group-item m-1">
             <div>
               {p.id}: {p.body}
               <span className="float-right">

@@ -15,14 +15,23 @@ header {
 }
 .posts {
   color: #ffd700;
+  border: 1px solid #ffd700;
 }
 .list-group-item {
   background-color: #a30b2e;
+  border: 1px inset #ffd700;
 }
 .home,
-.about,
 .contact,
-.projects {
+.sent,
+.trash,
+.contact {
+  color: #a30b2e;
+}
+#posts {
+  color: #a30b2e;
+}
+#contact {
   color: #a30b2e;
 }
 .navbar-dark .navbar-brand {
@@ -45,9 +54,21 @@ header {
 }
 .btn {
   color: #ffd700;
+  border: 1px solid #a30b2e;
 }
 .btn:hover {
   color: #a30b2e;
+  border: 1px solid #ffd700;
+}
+input.form-control {
+  color: #a30b2e;
+  background-color: #181818;
+  border: 1px solid #ffd700;
+}
+.form-control:focus {
+  color: #a30b2e;
+  background-color: #181818;
+  border: 1px solid #ffd700;
 }
 .image-div {
   border: 2px #ffd700 inset;
@@ -69,4 +90,19 @@ header {
   margin-top: 25px;
   color: #ffd700;
   border: 2px #ffd700 inset;
+}
+#login-form {
+  color: #ffd700;
+}
+#login-submit {
+  color: #ffd700;
+}
+#login-submit:hover {
+  color: #a30b2e;
+}
+.sentlist {
+  color: #ffd700;
+}
+#card {
+  border: 1px solid #ffd700;
 }
